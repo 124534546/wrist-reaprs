@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wrist Reapers | No Limits</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: gradientShift 12s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #0ff;
+    }
+
+    .section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #00f2ff;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+    }
+
+    .button:hover {
+      background: #0ff;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 5px;
+      width: 95%;
+      border-radius: 10px;
+      border: none;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      resize: vertical;
+    }
+
+    table {
+      width: 100%;
+      background: #111;
+      border-radius: 10px;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #444;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      color: #0ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    .admin {
+      background: #1c1c1c;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Wrist Reapers: No Limits</h1>
+  <img src="https://fitnessvolt.com/wp-content/uploads/2024/04/Devon-Larratt.jpg" alt="Devon Larratt" />
+  <div>
+    <a class="button" href="#register">Register</a>
+    <a class="button" href="#leaderboard">Leaderboard</a>
+    <a class="button" href="#techniques">Top Techniques</a>
+    <a class="button" href="#admin">Admin</a>
+  </div>
+</header>
+
+<div class="section" id="techniques">
+  <h2>Toproll Technique</h2>
+  <p>
+    The toproll is a technique focused on attacking your opponent’s fingers and hand. You cup your wrist, rise your knuckles, and pronate hard to peel back their grip. Toprollers focus on back pressure and hand control. It’s great for tall armwrestlers or those with long levers.
+  </p>
+
+  <h2>Hook Technique</h2>
+  <p>
+    The hook is an inside move, focusing on dragging the opponent's arm and wrist inward toward your body. It uses wrist flexion, elbow drag, and intense side pressure. Perfect for those with strong biceps and a powerful forearm lock. In a hook battle, arm strength and endurance matter most.
+  </p>
+
+  <h2>Press Technique</h2>
+  <p>
+    The press is a brute force move used especially off the start. You press your shoulder behind your hand and drive downward over your opponent's hand. Pressing requires strong triceps and chest strength. It’s a risky but fast-ending move when done right.
+  </p>
+</div>
+
+<div class="section" id="register">
+  <h2>Register as Armwrestler</h2>
+  <form id="registerForm">
+    <input type="text" placeholder="Full Name" required /><br/>
+    <input type="email" placeholder="Email" required /><br/>
+    <input type="number" placeholder="Weight (kg)" required /><br/>
+    <input type="number" placeholder="Age" required /><br/>
+    <select required>
+      <option value="">Dominant Arm</option>
+      <option>Left</option>
+      <option>Right</option>
+      <option>Both</option>
+    </select><br/>
+    <input type="text" placeholder="Instagram Link (optional)" /><br/>
+    <button type="submit" class="button">Submit</button>
+  </form>
+
+  <table id="leaderboard">
+    <tr>
+      <th>Name</th><th>Weight</th><th>Age</th><th>Arm</th><th>Instagram</th>
+    </tr>
+  </table>
+</div>
+
+<div class="section admin" id="admin">
+  <h2>Admin Panel</h2>
+  <input type="password" id="adminPass" placeholder="Enter Admin Password" />
+  <button class="button" onclick="verifyAdmin()">Login</button>
+
+  <div id="adminPanel" style="display:none;">
+    <h3>Arrange Match / Upload Pic</h3>
+    <textarea placeholder="Match Details or Notes..."></textarea><br/>
+    <input type="file" /><br/><br/>
+
+    <h3>Clear Leaderboard</h3>
+    <button class="button" onclick="clearBoard()">Clear All</button>
+  </div>
+</div>
+
+<footer>
+  Huzaifa Amir – Wrist Reapers – All Rights Reserved
+</footer>
+
+<script>
+  const form = document.getElementById('registerForm');
+  const leaderboard = document.getElementById('leaderboard');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inputs = form.querySelectorAll('input, select');
+    const tr = document.createElement('tr');
+    inputs.forEach(input => {
+      const td = document.createElement('td');
+      td.textContent = input.value;
+      tr.appendChild(td);
+    });
+    leaderboard.appendChild(tr);
+    form.reset();
+  });
+
+  function verifyAdmin() {
+    const pass = document.getElementById('adminPass').value;
+    if (pass === 'lasan') {
+      document.getElementById('adminPanel').style.display = 'block';
+    } else {
+      alert('Wrong password!');
+    }
+  }
+
+  function clearBoard() {
+    const rows = leaderboard.querySelectorAll('tr');
+    rows.forEach((row, index) => { if (index > 0) row.remove(); });
+  }
+</script>
+
+</body>
+</html>
